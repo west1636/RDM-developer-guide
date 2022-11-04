@@ -1,4 +1,4 @@
-# i18n対応
+# RDM-osf.ioの場合
 
  - Potファイルを作成後、それをもとに該当言語のPoファイルを作成し、翻訳の編集を行います。
  - i18n対応が必要なファイルはmako, js, html(admin画面)などがあります。
@@ -20,3 +20,9 @@ mako；pybabel update -i ./website/translations/messages.pot -d ./website/transl
 js；ybabel update -i ./website/translations/js_messages.pot -D js_messages -d ./website/translations -l ja --update-header-comment --previous
 
 html；pybabel update -i ./admin/translations/django.pot -D django -d ./admin/translations -l ja --update-header-comment --previous(事前にdajngo.potファイルのProject-Id-Version等の属性の記法をpybabelに合わせておく)
+
+
+# RDM-ember-osf-webの場合
+
+ - code/translations配下のyamlファイルに、「<キー名>:<翻訳文言>」のように設定する。
+ - テンプレート(hbs)の文言は「{{t '<キー名>'}}」とする
