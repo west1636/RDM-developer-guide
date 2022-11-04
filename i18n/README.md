@@ -5,14 +5,16 @@
  - 新たな翻訳文言(msgid)が追加されたときはenのpot,poファイルも更新します。
  - PO-Revision-Date, Last-Translatorも合わせて更新します。
 
- - potファイルの作成コマンド
+- potファイルの作成コマンド
+
 mako：pybabel extract -F ./website/settings/babel.cfg -o ./website/translations/messages.pot .
 
 js：pybabel extract -F ./website/settings/babel_js.cfg -o ./website/translations/js_messages.pot .
 
 html；django-admin makemessages --keep-pot -l ja
 
- - poファイルの作成、更新
+- poファイルの作成、更新
+
 mako；pybabel update -i ./website/translations/messages.pot -d ./website/translations -l ja --update-header-comment --previous
 
 js；ybabel update -i ./website/translations/js_messages.pot -D js_messages -d ./website/translations -l ja --update-header-comment --previous
